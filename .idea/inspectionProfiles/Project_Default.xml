@@ -1,0 +1,15 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="lesson7b.bank_account.Bank_account.balance" />
+          <option value="lesson7b.bank_account.Bank_account.is_foreign_currency" />
+          <option value="int.split" />
+          <option value="movies.views" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
