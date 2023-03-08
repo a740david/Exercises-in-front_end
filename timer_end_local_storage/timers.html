@@ -1,0 +1,75 @@
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+ function disableButton() {
+  const myButton = document.getElementById("seconds-input");
+  myButton.disabled = true;
+}
+
+function enableButton() {
+  const myButton = document.getElementById("seconds-input");
+  myButton.disabled = false;
+}
+
+  function startCountdown() {
+  const secondsInput = document.getElementById("seconds-input");
+
+  
+  const seconds = parseInt(secondsInput.value);
+  if (seconds){
+
+    disableButton()
+  }
+   
+  countdown(seconds)
+
+}
+
+function countdown(event) {
+  const text = document.getElementById("message");
+  
+  
+
+  console.log(localStorage)
+  let remainingSeconds = event;
+  let countdown=document.getElementById("countdown")
+  const intervalId = setInterval(() => {
+   
+    remainingSeconds--;
+
+   
+    countdown.innerHTML = remainingSeconds
+    localStorage.setItem("user",countdown.innerHTML)
+    
+    if (text.style.display === "block") {
+        text.style.display = "none";
+    } else {
+    if (remainingSeconds <= 0  || remainingSeconds===NaN) {
+      clearInterval(intervalId);
+      enableButton();
+      text.style.display = "block";
+  
+    }  
+   }
+  }, 1000); 
+}
+
+    </script>
+</head>
+<body>
+    <input  type="number" id="seconds-input" placeholder="Enter number of seconds"/>
+    <button  id="save-btn" onclick="startCountdown()" >Start Countdown </button>
+    <p>Countdown: <span  id="countdown"></span></p>
+    <div id="message" style='display: none' >Ready to start a new timer: </div>
+
+</body>
+</html> 
